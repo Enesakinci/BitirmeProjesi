@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Duyurular </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    
+    <ion-list>
+        <h2>Duyurular</h2>
+          <ion-item *ngFor="let userdata of veri">    
+            <h3>{{userdata.sinif_adi}}</h3>
+            <h3> {{userdata.duyuru_baslik}}</h3>
+            <p>{{userdata.duyuru}}</p>
+          </ion-item>
+    </ion-list> 
+  
+  
+  
+  
+</ion-content>

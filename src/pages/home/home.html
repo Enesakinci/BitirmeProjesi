@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cumhuriyet Universitesi</ion-title>
+    <ion-buttons end>
+        <button (click)="logOut()" ion-button icon-only>
+          <ion-icon name="log-out" class="bounce"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item icon-start>
+      <ion-icon name="contact"></ion-icon>
+      İsim Soyisim : {{userdata[0].full_name}}
+    </ion-item>
+    <ion-item icon-start>
+      <ion-icon name="person"></ion-icon>
+      Okul Numarası : {{userdata[0].username}}
+    </ion-item>
+    <ion-item icon-start>
+      <ion-icon name="at"></ion-icon>
+      Email : {{userdata[0].email}}
+    </ion-item>
+  </ion-list>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+                <ion-item>
+                    <ion-label>Sınıf Seçimi !</ion-label>
+                    <ion-select [(ngModel)]="zone.kind" >
+                      <ion-option *ngFor="let userdata of veri" value="{{userdata.sinif_ad}}">{{userdata.sinif_ad}}     {{userdata.sinif_mevcudu}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+              
+            </div>
+          </ion-col>
+      </ion-row>
+      </ion-grid>
+    
+    
+ 
+  <button ion-button class="login-button bounce" (click)="scan()">Burdayım !</button>
+ 
+  <ion-list> 
+    <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">
+      <!-- <h2>{{device.uuid}}</h2> -->
+      <h2>{{ device.name }}</h2>
+      <p>{{ device.id }}</p>
+      <p>RSSI: {{ device.rssi }}</p>
+    </button>  
+   </ion-list> 
+
+
+   <ion-list>
+     <p>{{deger}}</p>
+   </ion-list>
+
+  
+    
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Deviice</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="padding">
+
+  <ion-card>
+    <ion-card-header>
+      {{ peripheral.name || 'Unnamed' }}
+    </ion-card-header>
+    <ion-card-content>
+      {{ peripheral.id }}
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-card>
+    <ion-card-header>
+      Services
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let service of peripheral.services">
+        {{service}}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+   <ion-card-header>
+      Details
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list inset>
+            <ion-item *ngFor="let characteristic of peripheral.characteristics" >
+            <h2> {{characteristic.characteristic}} </h2>
+            <h2>{{characteristic.properties}}</h2>
+            </ion-item>
+            </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p>{{ statusMessage }}</p>
+  </ion-toolbar>
+</ion-footer>
